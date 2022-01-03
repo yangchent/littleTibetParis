@@ -1,4 +1,5 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 // Import views
 import Home from "./views/home";
@@ -17,20 +18,20 @@ import Footer from './components/footer';
 function App() {
 
   return (
-    <BrowserRouter>
-              <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/about" component={About} />
-                    <Route exact path="/contact" component={Contact} />
-                    <Route exact path="/faq" component={Faq} />
-                    <Route exact path="/boutique" component={Boutique} />
-                    <Route exact path="/ngo" component={Ngo} />
-                    <Route exact path="/restaurant" component={Restaurant} />
-                    <Route path="*" component={Error404} />
-                </Switch>
-              <Footer />
-    </BrowserRouter>
+    <Router>
+      <Navbar />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/boutique" element={<Boutique />} />
+            <Route path="/ngo" element={<Ngo />} />
+            <Route path="/restaurant" element={<Restaurant />} />
+            <Route path="*" element={<Error404 />} />
+        </Routes>
+      <Footer />
+    </Router>
   );
 }
 
