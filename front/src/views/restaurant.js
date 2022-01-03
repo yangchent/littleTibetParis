@@ -3,8 +3,8 @@ import React from "react";
 function Restaurant() {
 
     return (
-        <div className="h-screen container mx-auto">
-            <h1 className="text-bold text-green">Restaurant List</h1> 
+        <div className="container mx-auto">
+            <h1 className="text-2xl font-semibold text-center p-8">Restaurant List</h1> 
 
             <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
 		        <div class="w-full md:w-1/3 bg-white grid place-items-center">

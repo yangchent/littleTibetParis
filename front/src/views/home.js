@@ -3,15 +3,16 @@ import React from "react";
 
 function Home() {  
   return (
-  <>
+  <div className="h-full">
     <div className="bg-lightColor">
       <div className="container mx-auto pt-24 pb-0 mb-0">
-        <h1 className="text-8xl font-bold text-baseColor text-center">TIBET IN PARIS</h1>
+        <h1 className="text-8xl font-bold text-baseColor text-center">TIBET À PARIS</h1>
       </div>
     </div>
     <div className="bg-baseColor mt-0 pt-0">
       <div className="container mx-auto">
         <div className="p-8">
+          <h2 className="p-4 text-center text-2xl text-white">Happening now</h2>
             <p className="text-white p-8">So perhaps, you've generated some fancy text, and you're content that you can now copy and paste your
                 fancy text in the comments section of funny cat videos, but perhaps you're wondering how it's even possible to
               change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?
@@ -26,7 +27,7 @@ function Home() {
       </div >
     </div >
     <hr />
-  </>
+  </div>
   );
 
 }
