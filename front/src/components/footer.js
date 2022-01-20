@@ -16,6 +16,7 @@ function Footer() {
             <div className="flex ">
               <Link to="/faq" className="p-1 ml-4">FAQ</Link>
               <Link to="/contact" className="p-1 ml-4">Contact</Link>
+              
             </div>
           </div>
         </div>

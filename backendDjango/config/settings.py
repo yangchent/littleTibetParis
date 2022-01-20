@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'lvbg-kiqysgt-3j@w%7%u&tzf*qi&i!enm3njitach-uh4uysr'
+SECRET_KEY = 'SECRETKEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,20 +39,28 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Local
     'myapp',
-    'api.apps.ApiConfig', # new
     # 3rd party
     'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'django.middleware.security.SecurityMiddleware',
+'django.contrib.sessions.middleware.SessionMiddleware',
+'corsheaders.middleware.CorsMiddleware', # new
+'django.middleware.common.CommonMiddleware',
+'django.middleware.csrf.CsrfViewMiddleware',
+'django.contrib.auth.middleware.AuthenticationMiddleware',
+'django.contrib.messages.middleware.MessageMiddleware',
+'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://127.0.0.1:8000'
+)
+
 
 ROOT_URLCONF = 'config.urls'
 
@@ -123,3 +131,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication', # new
+    ],
+}
+

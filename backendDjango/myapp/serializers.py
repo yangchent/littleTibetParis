@@ -7,6 +7,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
         model = Restaurant
         fields ="__all__"
 
+
 class BoutiqueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Boutique

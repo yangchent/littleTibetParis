@@ -1,14 +1,31 @@
-from django.views.generic import ListView
-from .models import Restaurant, Ngo , Boutique
+from rest_framework import generics
+from myapp.models import Restaurant, Boutique, Ngo
+from .permissions import IsAuthorOrReadOnly # new
+from .serializers import RestaurantSerializer ,BoutiqueSerializer, NgoSerializer
 
-class RestaurantListview(ListView):
-    model = Restaurant
-    template_name = 'restaurants/restaurant_list.html'
+class RestaurantAPIView(generics.ListAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
 
-class NgoListview(ListView):
-    model = Ngo
-    template_name = 'ngos/ngo_list.html'
+class RestaurantDetailsAPIView(generics.RetrieveAPIView):
+    permission_classes = (IsAuthorOrReadOnly,) # not needed but in future
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
 
-class BoutiqueListview(ListView):
-    model = Boutique
-    template_name = 'shops/shop_list.html'
+class BoutiqueAPIView(generics.ListAPIView):
+    queryset = Boutique.objects.all()
+    serializer_class = BoutiqueSerializer
+
+class BoutiqueDetailsAPIView(generics.RetrieveAPIView):
+    permission_classes = (IsAuthorOrReadOnly,) # not needed but in future
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+class NgoAPIView(generics.ListAPIView):
+    queryset = Ngo.objects.all()
+    serializer_class = NgoSerializer
+
+class NgoDetailsAPIView(generics.RetrieveAPIView):
+    permission_classes = (IsAuthorOrReadOnly,) #not needed but in future
+    queryset = Ngo.objects.all()
+    serializer_class = NgoSerializer

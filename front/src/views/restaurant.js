@@ -1,7 +1,8 @@
 import React from "react";
 
-function Restaurant() {
 
+function Restaurant() {
+	
     return (
         <div className="container mx-auto">
             <h1 className="text-2xl font-semibold text-center p-8">Restaurant List</h1> 
@@ -36,15 +37,18 @@ function Restaurant() {
 						    Superhost
                         </div>
 				    </div>
-                    <h3 class="font-black text-gray-800 md:text-3xl text-xl">Le Petite Tibet</h3>
-                    <p class="md:text-lg text-gray-500 text-base">Restaurant Tibetan: Authentic tibetan dishes served here</p>
+					
+                    <h3 class="font-black text-gray-800 md:text-3xl text-xl">le petite Tibet</h3>
+                    <p class="md:text-lg text-gray-500 text-base">Address : rue balzac</p>
                     <p class="text-xl font-black text-gray-800">
                         Price Range - 10 -15
                         <span class="font-normal text-gray-600 text-base">/plat</span>
                     </p>
+					
 			    </div>
 		    </div>
 	    </div>
         );
-    }
+	}
+	
 export default Restaurant;
