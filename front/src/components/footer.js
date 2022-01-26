@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer>
-      <div className="bg-baseColor absolute inset-x-0 bottom-0 ">
+      <div className="bg-baseColor fixed inset-x-0 bottom-0 ">
         <div className="container mx-auto py-4 px-5 flex flex-col sm:flex-row justify-between ">
           <div>
             <p>© 2021 littleTibetParis. All rights reserved.</p>

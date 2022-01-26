@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 
-class CardResto extends Component {
+class CardNgo extends Component {
     constructor(props) {
         super(props);
    
         this.state = {
-            restaurants: [],
+            ngos: [],
         };
     }
     // new
     async componentDidMount() {
-        let url ="http://127.0.0.1:8000/restaurants/?format=json";
+        let url ="http://127.0.0.1:8000/ngos/?format=json";
         let data = await fetch(url);
         let parseData = await data.json()
         console.log(parseData);    
-        this.setState({ restaurants: parseData })
+        this.setState({ ngos: parseData })
     }
     render() {
         return (
             <>
-            {this.state.restaurants.map(item => (
+            {this.state.ngos.map(item => (
 
 	    <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
                  <div class="w-full md:w-1/3 bg-white grid place-items-center" key={item.id}>
@@ -51,11 +51,10 @@ class CardResto extends Component {
 						    Superhost
                         </div>
 				    </div>
-				    <h3 class="font-black text-gray-800 md:text-3xl text-xl">{item.name}</h3>
-				    <p class="md:text-lg text-gray-500 text-base">{item.address}</p>
+				    <h3 class="font-black text-gray-800 md:text-3xl text-xl"> {item.name}</h3>
+				    <p class="md:text-lg text-gray-500 text-base">Address: {item.address}</p>
 				    <p class="text-xl font-black text-gray-800">
-                        {item.city}
-					    <span class="font-normal text-gray-600 text-base">/plat</span>
+                        Cité : {item.city}
 				    </p>
 			    </div>
 	    </div>         
@@ -64,4 +63,4 @@ class CardResto extends Component {
     );
     }
 }
-export default CardResto;
+export default CardNgo;

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 
-class CardResto extends Component {
+class CardShop extends Component {
     constructor(props) {
         super(props);
    
         this.state = {
-            restaurants: [],
+            shops: [],
         };
     }
     // new
     async componentDidMount() {
-        let url ="http://127.0.0.1:8000/restaurants/?format=json";
+        let url ="http://127.0.0.1:8000/shops/?format=json";
         let data = await fetch(url);
         let parseData = await data.json()
         console.log(parseData);    
-        this.setState({ restaurants: parseData })
+        this.setState({ shops: parseData })
     }
     render() {
         return (
             <>
-            {this.state.restaurants.map(item => (
+            {this.state.shops.map(item => (
 
 	    <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
                  <div class="w-full md:w-1/3 bg-white grid place-items-center" key={item.id}>
@@ -64,4 +64,4 @@ class CardResto extends Component {
     );
     }
 }
-export default CardResto;
+export default CardShop;
