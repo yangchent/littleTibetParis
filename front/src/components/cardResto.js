@@ -87,10 +87,8 @@ class CardResto extends Component {
 				    </div>
 				    <h3 class="font-black text-gray-800 md:text-3xl text-xl">{item.name}</h3>
 				    <p class="md:text-lg text-gray-500 text-base">{item.address}</p>
-				    <p class="text-xl font-black text-gray-800">
-                        {item.city}
-					    <span class="font-normal text-gray-600 text-base"></span>
-				    </p>
+				    <p class="text-lg font-black text-gray-800">{item.city} {item.Zip_code}</p>
+					<p class="text-lg font-black text-gray-800">{item.phone}</p>
 			    </div>
 	    </div>         
             ))}
