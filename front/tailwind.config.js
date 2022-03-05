@@ -3,13 +3,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    
     extend: {
+      fontFamily: {
+        'roboto': ['"Roboto"', 'sans-serif'],
+        'poppins': ['"Poppins"', 'sans-serif'],
+        'fredoka': ['"Fredoka"', 'sans-serif'] // Ensure fonts with spaces have " " surrounding it.
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'lightColor': '#ffcad4',
-        'baseColor': '#9d8189',
+        'mygreen': '#2a9d8f',
+        'myorange': '#e76f51',
       },
     },
   },

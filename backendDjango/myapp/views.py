@@ -1,7 +1,22 @@
+from django.contrib.auth import get_user_model # new
 from rest_framework import generics
 from myapp.models import Restaurant, Boutique, Ngo
 from .permissions import IsAuthorOrReadOnly # new
 from .serializers import RestaurantSerializer ,BoutiqueSerializer, NgoSerializer
+from .serializers import UserSerializer # new
+
+# from myapp.forms import ContactFormView
+# from django.views.generic.edit import FormView
+
+# class ContactFormView(FormView):
+#     queryset = Contact.objects.all()
+#     serializer_class = ContactSerializer
+
+#     def form_valid(self, form):
+#         # This method is called when valid form data has been POSTed.
+#         # It should return an HttpResponse.
+#         form.send_email()
+#         return super().form_valid(form)
 
 class RestaurantAPIView(generics.ListAPIView):
     queryset = Restaurant.objects.all()
@@ -29,3 +44,11 @@ class NgoDetailsAPIView(generics.RetrieveAPIView):
     permission_classes = (IsAuthorOrReadOnly,) #not needed but in future
     queryset = Ngo.objects.all()
     serializer_class = NgoSerializer
+
+# class ContactView():
+#     queryset = Ngo.objects.all()
+#     serializer_class = NgoSerializer
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView): # new
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer

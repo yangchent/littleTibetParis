@@ -1,27 +1,50 @@
-import React from "react";
+import React,  { useState, useEffect, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
 
 function Navbar() {
   
-  return (
-        <nav className="bg-lightColor">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-between">
-                    <div className="">
+    const [isAuth, setIsAuth] = useState(false);
 
-                        <Link to="/" className="flex items-center px-2">
-                            <img src="./img/logoT.png" alt="Logo" width="120px" />
-                        </Link>
-                    </div>
+    useEffect(() => {
+        if (localStorage.getItem('token') !== null) {
+          setIsAuth(true);
+        }
+      }, []);
+
+  return (
+        <nav>
+            <div className="fixed inset-x-0 top-0 z-10 bg-white flex justify-center">
+                <div className="flex justify-between ">
                     <div className="flex space-x-7 items-center">
-                        <Link to="/about" className="py-4 px-2 text-baseColor font-semibold hover:text-black transition duration-300">ABOUT</Link>
-                        <Link to="/boutique" className="py-4 px-2 text-baseColor font-semibold hover:text-black transition duration-300">BOUTIQUE</Link>                    
-                        <Link to="/restaurant" className="block font-semibold px-2 py-4 text-baseColor hover:text-black transition duration-300" >RESTAURANT</Link>
-                        <Link to="/ngo" className="block font-semibold px-2 py-4 text-baseColor hover:text-black transition duration-300" >NGO</Link>
-                        <Link to="/contact" className="block font-semibold px-2 py-4 text-baseColor hover:text-black transition duration-300" >CONTACT</Link>
+                        <Link to="/" className="py-4 px-2 font-poppins font-semibold hover:text-mygreen transition duration-300">ACCUEIL</Link>
+                        <Link to="/about" className="py-4 px-2 font-poppins font-semibold hover:text-mygreen transition duration-300">À PROPOS DE</Link>
+                        <Link to="/boutique" className="py-4 px-2 font-poppins font-semibold hover:text-mygreen transition duration-300">BOUTIQUE</Link>                    
+                        <Link to="/restaurant" className="block font-poppins font-semibold px-2 py-4 hover:text-mygreen transition duration-300" >RESTAURANT</Link>
+                        <Link to="/ngo" className="block font-poppins font-semibold px-2 py-4 hover:text-mygreen transition duration-300" >ASSOCIATION</Link>
+                        <Link to="/contact" className="block font-poppins font-semibold px-2 py-4 hover:text-mygreen transition duration-300" >CONTACT</Link>
                     </div>
-                    </div>
+                    <ul>
+                    {isAuth === true ? (
+                        <Fragment>
+                            {' '}
+                            <li className='ml-12 inline-block'>
+                                <Link to='/logout' className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300">Logout</Link>
+                            </li>
+                        </Fragment>
+                        ) : (
+                        <Fragment >
+                            {' '}
+                            <li className='ml-12 inline-block'>
+                                <Link to="/register" className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300" >S'inscrire</Link>
+                            </li>
+                            <li className='inline-block'>
+                                <Link to="/login" className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300" >Connexion</Link>
+                            </li>
+                        </Fragment>
+                        )}
+                    </ul>
+                </div>
             </div>
         </nav >
   );

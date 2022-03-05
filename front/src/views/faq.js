@@ -4,12 +4,12 @@ import "../css/faq_page.css"
 const Faq=()=>{
 
     return (
-        <main className="w-3/5 p-8 mx-auto">
-        <h1 className="font-bold text-3xl text-center md:text-4xl lg:text-5xl font-heading text-mediumAccent pb-2 m-3">Les questions les plus fréquentes</h1>
-        <h3 className="m-12 text-center text-gray-400 font-normal text-base">Vous avez une question ? Voici les réponses aux questions les plus fréquemment posées.
+        <main className="w-3/5 p-8 mx-auto my-12">
+        <h1 className="font-semibold text-center font-poppins text-2xl font-heading text-mygreen pb-2 m-3">Les questions les plus fréquentes</h1>
+        <h3 className="m-12 text-center font-fredoka text-gray-400 text-base">Vous avez une question ? Voici les réponses aux questions les plus fréquemment posées.
             N'hésitez pas à nous contacter par mail pour toute autre question.</h3>
 
-        <section className="shadow row">
+        <section className="shadow row font-fredoka">
             <div className="tabs">
                 <div className="border-b tab">
                     <div className="border-l-2 border-transparent relative">
@@ -65,7 +65,7 @@ const Faq=()=>{
                         <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3" />
                         <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck3">
                             <span className="text-grey-darkest font-thin text-xl">
-                                Why this project?
+                            Pourquoi ce projet ?
                             </span>
                             <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                                 {/* <!-- icon by feathericons.com --> */}
@@ -78,8 +78,7 @@ const Faq=()=>{
                         <div className="tab-content">
                             <div className="pl-8 pr-8 pb-5 text-grey-darkest">
                                 <p className="pb-3 pl-4">
-                                    Because living in a free country and being able to express. This is my expression of my duties that i think i am capable of contributing a little to the country i call my HomeLand.
-                                </p>
+                                Parce que je vis dans un pays libre et que je peux m'exprimer. C'est l'expression de mes devoirs que je pense être capable de contribuer un peu à ce pays que j'appelle mon pays.                                </p>
                             </div>
                         </div>
                     </div>
@@ -89,7 +88,7 @@ const Faq=()=>{
                         <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck2" />
                         <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck2">
                             <span className="text-grey-darkest font-thin text-xl">
-                                Future of this website?
+                                L'avenir de ce site ?
                             </span>
                             <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                                 {/* icon by feathericons.com */}
@@ -103,7 +102,7 @@ const Faq=()=>{
                             <div className="pl-8 pr-8 pb-5 text-grey-darkest">
                    
                                 <p className="pl-4">
-                                    Evolution for a better tomorrow, more informative and more interaction.
+                                J'espère un avenir meilleur, plus informatif et plus d'interaction. 
                                 </p>
                             </div>
                         </div>

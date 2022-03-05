@@ -10,13 +10,16 @@ import Ngo from "./views/ngo";
 import Contact from "./views/contact";
 import Error404 from "./views/error404";
 import Faq from "./views/faq";
-
+import Register from './views/register';
+import Login from './views/login';
+import Logout from './views/logout';
 // Import components
 import Navbar from "./components/navbar";
 import Footer from './components/footer';
 
-function App() {
 
+function App() {
+ 
   return (
     <Router>
       <Navbar />
@@ -28,6 +31,9 @@ function App() {
             <Route path="/boutique" element={<Boutique />} />
             <Route path="/ngo" element={<Ngo />} />
             <Route path="/restaurant" element={<Restaurant />} />
+            <Route path="/register" element={<Register />}/>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/logout" element={<Logout />}/>
             <Route path="*" element={<Error404 />} />
         </Routes>
       <Footer />

@@ -23,12 +23,12 @@ class CardResto extends Component {
 
 	    <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
                  <div class="w-full md:w-1/3 bg-white grid place-items-center" key={item.id}>
-			        <img src={item.image} alt="image" class="rounded-lg" />
+			        <img src={item.image} alt="resto" class="rounded-lg" />
                 </div>
-			    <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
+			    <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 font-fredoka">
 				    <div class="flex justify-between item-center">
 					 {item.deliveroo ? (
-							<a href={item.deliveroo} class="text-blue-600 font-medium hidden md:block hover:text-blue-400">
+							<a href={item.deliveroo} target="_blank"  rel="noreferrer" class="text-blue-600 font-medium hidden md:block hover:text-blue-400">
 								<svg xmlns="http://www.w3.org/2000/svg" className='w-16' viewBox="-22.8 232.4 490.8 131.6" >
 									<path d="M156.5 330.9h11.2l-1.9-8.7v-51.7h-10.7v23.6c-3.2-3.7-7.7-5.9-12.9-5.9-10.7 0-19 8.9-19 21.8 0 13 8.3 21.8 19 21.8
 									5.3 0 9.9-2.3 13.1-6.2zm211.6-31.1c2.2 0 4.2.6 6 1.9l5.1-11.4c-2.4-1.5-5.1-2.1-7.8-2.1-4.8 0-8.9 2.2-11.4 6.3l-1.1-5.3h-11l1.8
@@ -49,7 +49,7 @@ class CardResto extends Component {
 						 ) : null
 						}
 						{item.uber ? (
-							<a href={item.uber} class="text-blue-600 font-medium hidden md:block hover:text-blue-400">
+							<a href={item.uber} target="_blank"  rel="noreferrer" class="text-blue-600 font-medium hidden md:block hover:text-blue-400">
 								<svg xmlns="http://www.w3.org/2000/svg" className='w-16' viewBox="-.5 .2 1052.9 169.6" >
 									<path d="m787.3 105.2c0-21-16.8-37.5-38-37.5-20.9 0-38 16.5-38 37.5s17.1 37.5 38 37.5c21.2 0 38-16.5 38-37.5m31-61.4v122.9h-31.6v-11.1c-11 9.1-24.9 
 									14.2-40 14.2-37.4 0-66.6-28.7-66.6-64.6 0-35.8 29.3-64.6 66.6-64.6 15.1 0 29 5.1 40 14.2v-11zm105 95h-23.8c-7.2 
@@ -68,7 +68,7 @@ class CardResto extends Component {
 						 ) : null
 						}
 						{item.link ? (
-							<a href={item.link} class="text-blue-600 text-sm md:block hover:text-blue-400">
+							<a href={item.link} target="_blank"  rel="noreferrer" class="text-blue-600 text-sm md:block hover:text-blue-400">
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className="w-4 h-4 inline-block mr-1" viewBox="0 0 52 52" enable-background="new 0 0 52 52">
 									<path fill="#2563eb" d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M26,7C26,7,26,7,26,7C26,7,26,7,26,7 
 									C26,7,26,7,26,7z M28,7.1c-0.1,0-0.1,0-0.2,0C27.9,7.1,28,7.1,28,7.1z M26,45C15.5,45,7,36.5,7,26c0-1,0.1-2.1,0.3-3  
@@ -82,13 +82,13 @@ class CardResto extends Component {
 						}
 					
 					    <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-						    Superhost
+						    Détail
                         </div>
 				    </div>
 				    <h3 class="font-black text-gray-800 md:text-3xl text-xl">{item.name}</h3>
 				    <p class="md:text-lg text-gray-500 text-base">{item.address}</p>
 				    <p class="text-lg font-black text-gray-800">{item.city} {item.Zip_code}</p>
-					<p class="text-lg font-black text-gray-800">{item.phone}</p>
+					
 			    </div>
 	    </div>         
             ))}
