@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from '../components/button'
+
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -49,55 +51,67 @@ const Register = () => {
         }
       });
   };
-
+ 
   return (
-    <div className='container mx-auto my-8'>
-      <div className='w-full flex justify-center'>
-        {loading === false && <h1>Signup</h1>}
+    <div className='container mx-auto my-16'>
+    <div className='w-full flex justify-center font-fredoka'>
+      <div className="w-96 px-16 py-12 shadow-xl rounded-lg -space-y-2">
+        {loading === false && <h1 class="font-poppins text-mygreen font-semibold text-lg text-center">S'inscrire</h1>}
         {errors === true && <h2>Cannot signup with provided credentials</h2>}
-        <form onSubmit={onSubmit} className="bg-gray-100 mt-12 p-8 shadow-lg rounded -space-y-4">
-        <div className='mb-2 p-4'>
-          <label htmlFor='username'>Username:</label> <br />
-          <input
-            name='username'
-            type='username'
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            required
-          />{' '}
+        <form onSubmit={onSubmit} >
+
+        <div className='p-2'>
+          <label htmlFor='username'>Username:</label>
+          <input name='username' type='username' value={username} placeholder="nom d'utilisateur"
+            onChange={e => setUsername(e.target.value)} required
+            className={
+              username.length > 5
+                ?
+                "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
+            }            
+          />
         </div>
-        <div className='mb-2 p-4'>
-        <label htmlFor='email'>Email address:</label> <br />
-        <input
-          name='email'
-          type='email'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          required
-        />{' '}
+        <div className='p-2'>
+        <label htmlFor='email'>Email</label> 
+        <input name='email' type='email' value={email}  placeholder="Email" onChange={e => setEmail(e.target.value)} required
+          className={
+            email.match(
+              /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            )
+              ? "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm "
+              : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm "
+          }         
+        />
         </div>
-        <div className='mb-2 p-4'>
-        <label htmlFor='password1'>Password:</label> <br />
-        <input
-          name='password1'
-          type='password'
-          value={password1}
-          onChange={e => setPassword1(e.target.value)}
-          required
-        />{' '}
+        <div className='p-2'>
+        <label htmlFor='password1'>Mot de passe</label> 
+        <input name='password1' type='password' value={password1} 
+          onChange={e => setPassword1(e.target.value)} required placeholder="Mot de passe"
+          className={
+            password1.length > 7
+              ?
+              "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm "
+              : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm "
+          }
+        />
         </div>
-        <div className='mb-2 p-4'>
-        <label htmlFor='password2'>Confirm password:</label> <br />
-        <input
-          name='password2'
-          type='password'
-          value={password2}
-          onChange={e => setPassword2(e.target.value)}
-          required
-        />{' '}
+        <div className='p-2'>
+        <label htmlFor='password2'>Confirmez le mot de passe </label>
+        <input name='password2' type='password' placeholder="Confirmez le mot de passe"
+          value={password2} onChange={e => setPassword2(e.target.value)}  required
+          className={
+            password2.length > 7
+              ?
+              "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm "
+              : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm "
+          }/>
         </div>
-        <input type='submit' value='Signup' />
+        <div className='flex justify-center m-2'>    
+            <Button onClick='submit' value='Signup' children="sign Up" />                   
+        </div>
       </form>
+      </div>
       </div>
     </div>
   );

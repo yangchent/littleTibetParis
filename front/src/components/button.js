@@ -1,7 +1,8 @@
 const Button = (props) => {
     return (
         <>
-            <button className={`py-1 px-2 font-medium text-white bg-mygreen rounded-full hover:bg-myorange transition duration-300 ${props.classAdd}`} href={props.href} onClick={props.onClick}>
+            <button className={`py-2 px-6 font-medium text-white bg-mygreen rounded-md hover:bg-myorange transition 
+            duration-300 ${props.classAdd}`} href={props.href} onClick={props.onClick}>
                 {props.children}
             </button>
         </>

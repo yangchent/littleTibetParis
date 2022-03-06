@@ -25,23 +25,20 @@ function Navbar() {
                         <Link to="/contact" className="block font-poppins font-semibold px-2 py-4 hover:text-mygreen transition duration-300" >CONTACT</Link>
                     </div>
                     <ul>
-                    {isAuth === true ? (
-                        <Fragment>
-                            {' '}
+                    {isAuth === true ? (                                                    
+                        <li className='ml-12 inline-block'>
+                            <Link to='/logout' className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300">Logout</Link>
+                        </li>                    
+                    ) : (
+                        <>
                             <li className='ml-12 inline-block'>
-                                <Link to='/logout' className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300">Logout</Link>
-                            </li>
-                        </Fragment>
-                        ) : (
-                        <Fragment >
-                            {' '}
-                            <li className='ml-12 inline-block'>
-                                <Link to="/register" className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300" >S'inscrire</Link>
+                                <Link to="/register" className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300">S'inscrire</Link>
                             </li>
                             <li className='inline-block'>
-                                <Link to="/login" className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300" >Connexion</Link>
+                                <Link to="/login" className="block font-poppins text-myorange px-1 py-4 hover:text-mygreen transition duration-300">Connexion</Link>
                             </li>
-                        </Fragment>
+                        </>
+                     
                         )}
                     </ul>
                 </div>

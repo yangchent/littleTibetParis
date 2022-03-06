@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class CardShop extends Component {
-    constructor(props) {
-        super(props);
+
+const CardResto = () => {
    
-        this.state = {
-            shops: [],
-        };
-    }
-    // new
-    async componentDidMount() {
-        let url ="http://127.0.0.1:8000/shops/?format=json";
-        let data = await fetch(url);
-        let parseData = await data.json()
+	const [shops, setShops] = useState([]);    
+
+    useEffect(() => {
+		const fetchDatabase = async () => {
+        const data = await fetch("http://127.0.0.1:8000/shops/?format=json");
+        const parseData = await data.json()
         console.log(parseData);    
-        this.setState({ shops: parseData })
-    }
-    render() {
-        return (
+		setShops({ ngos: parseData })
+	}
+	fetchDatabase();
+    }, [])
+           
+    return (
             <>
             {this.state.shops.map(item => (
 
@@ -55,6 +53,5 @@ class CardShop extends Component {
             ))}
         </>
     );
-    }
 }
 export default CardShop;

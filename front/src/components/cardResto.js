@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class CardResto extends Component {
-    constructor(props) {
-        super(props);
+
+const CardResto = () => {
    
-        this.state = {
-            restaurants: [],
-        };
-    }
-    // new
-    async componentDidMount() {
-        let url ="http://127.0.0.1:8000/restaurants/?format=json";
-        let data = await fetch(url);
-        let parseData = await data.json()
+	const [restaurants, setRestaurants] = useState([]);    
+
+    useEffect(() => {
+		const fetchDatabase = async () => {
+        const data = await fetch("http://127.0.0.1:8000/restaurants/?format=json");
+        const parseData = await data.json()
         console.log(parseData);    
-        this.setState({ restaurants: parseData })
-    }
-    render() {
+		setRestaurants({ ngos: parseData })
+	}
+	fetchDatabase();
+    }, [])
+
         return (
             <>
             {this.state.restaurants.map(item => (
@@ -95,5 +93,4 @@ class CardResto extends Component {
         </>
     );
     }
-}
 export default CardResto;

@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class CardNgo extends Component {
-    constructor(props) {
-        super(props);
+	const CardNgo = () => {
    
-        this.state = {
-            ngos: [],
-        };
-    }
-    // new
-    async componentDidMount() {
-        let url ="http://127.0.0.1:8000/ngos/?format=json";
-        let data = await fetch(url);
-        let parseData = await data.json()
+	const [ngos, setNgos] = useState([]);    
+
+    useEffect(() => {
+		const fetchDatabase = async () => {
+        const data = await fetch("http://127.0.0.1:8000/ngos/?format=json");
+        const parseData = await data.json()
         console.log(parseData);    
-        this.setState({ ngos: parseData })
-    }
-    render() {
+		setNgos({ ngos: parseData })
+	}
+	fetchDatabase();
+    }, [])
+
         return (
             <>
             {this.state.ngos.map(item => (
@@ -53,5 +50,4 @@ class CardNgo extends Component {
         </>
     );
     }
-}
 export default CardNgo;

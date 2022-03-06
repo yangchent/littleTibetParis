@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function Home() {  
@@ -29,15 +29,14 @@ function Home() {
   <div className="container mx-auto ">
     {loading === false && (
       <div className="h-screen flex items-center justify-center">
-        <Fragment>
-          <h2>Hello {userEmail}!</h2>
+        <>
+          {/* <h2>Hello {userEmail}!</h2> */}
           <h1 className="text-8xl font-bold text-mygreen font-poppins text-center">TIBET  </h1>
           <h1 className="text-8xl font-bold text-myorange font-poppins text-center">PARIS  </h1> 
-        </Fragment>
+        </>
       </div>
     )}
   </div>
   );
-
 }
 export default Home;

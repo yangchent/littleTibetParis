@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from '../components/button';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -47,46 +49,71 @@ const Login = () => {
       });
   };
 
+ 
   return (
     <div className='container mx-auto my-16'>
       <div className='w-full flex justify-center font-fredoka'>
-        {loading === false && <h1 class="font-poppins">Login</h1>}
+        <div className="w-96 px-16 py-12 shadow-xl rounded-lg -space-y-2">
+        {loading === false && <h1 class="font-poppins text-mygreen font-semibold text-lg text-center">Login</h1>}
         {errors === true && <p className='text-sm text-red-500'>Cannot log in with provided credentials</p>}
         {loading === false && (
-          <form onSubmit={onSubmit} className="bg-gray-100 mt-12 p-8 shadow-lg rounded -space-y-4" >
-            <div className='mb-2 p-4'>
-              <label htmlFor='username'>Username:</label> <br />
+          <form onSubmit={onSubmit}  >
+            <div className='p-2'>
+              <label htmlFor='username'>Nom d'utilisateur</label> 
               <input
-                name='username'
-                type='username'
-                value={username}
-                required
+                name='username' type='username'
+                value={username} required placeholder="nom d'utilisateur"
                 onChange={e => setUsername(e.target.value)}
-              />{' '}
+                className={
+                  username.length > 5
+                    ?
+                    "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
+                    : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                }
+                
+              />
             </div>
-            <div className='mb-2 p-4'>
-              <label htmlFor='email'>Email address:</label> <br />
+            <div className='p-2'>
+              <label htmlFor='email'>Email</label> 
               <input
                 name='email'
                 type='email'
                 value={email}
-                required
+                required placeholder="Email"
                 onChange={e => setEmail(e.target.value)}
-              />{' '}
+                className={
+                email.match(
+                  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                )
+                  ? "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
+                  : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm "
+              }
+              />
             </div>
-            <div className='mb-2 p-4'>
-              <label htmlFor='password'>Password:</label> <br />
+            <div className='p-2'>
+              <label htmlFor='password'>Mot de passe</label> 
               <input
                 name='password'
                 type='password'
                 value={password}
-                required
+                required placeholder="Mot de passe"
                 onChange={e => setPassword(e.target.value)}
-              />{' '}
-              </div>
-            <input type='submit' value='Login' />
+                className={
+                  password.length > 7
+                    ?
+                    "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                }
+              />
+            </div>
+            <div className="flex justify-center mt-2">
+                
+              <Button type='submit' value='Login' children="LOGIN" />
+            </div>
+                       
           </form>
         )}
+        </div>
       </div>
     </div>
   );
