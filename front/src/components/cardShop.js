@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 
-const CardResto = () => {
+const CardShop = () => {
    
-	const [shops, setShops] = useState([]);    
+	const [shops, setShops] = useState('');    
 
     useEffect(() => {
 		const fetchDatabase = async () => {
         const data = await fetch("http://127.0.0.1:8000/shops/?format=json");
         const parseData = await data.json()
         console.log(parseData);    
-		setShops({ ngos: parseData })
+		setShops( parseData )
 	}
 	fetchDatabase();
     }, [])

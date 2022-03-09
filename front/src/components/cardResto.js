@@ -10,19 +10,19 @@ const CardResto = () => {
         const data = await fetch("http://127.0.0.1:8000/restaurants/?format=json");
         const parseData = await data.json()
         console.log(parseData);    
-		setRestaurants({ ngos: parseData })
+		setRestaurants({ restaurants: parseData })
 	}
 	fetchDatabase();
     }, [])
 
         return (
             <>
-            {this.state.restaurants.map(item => (
+        	{restaurants ? restaurants.map((item) => {
 
-	    <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
-                 <div class="w-full md:w-1/3 bg-white grid place-items-center" key={item.id}>
-			        <img src={item.image} alt="resto" class="rounded-lg" />
-                </div>
+	    	<div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
+					<div class="w-full md:w-1/3 bg-white grid place-items-center" key={item.id}>
+						<img src={item.image} alt="resto" class="rounded-lg" />
+					</div>
 			    <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 font-fredoka">
 				    <div class="flex justify-between item-center">
 					 {item.deliveroo ? (
@@ -88,8 +88,9 @@ const CardResto = () => {
 				    <p class="text-lg font-black text-gray-800">{item.city} {item.Zip_code}</p>
 					
 			    </div>
-	    </div>         
-            ))}
+	    	</div>         
+			 }) : null 
+			}		
         </>
     );
     }

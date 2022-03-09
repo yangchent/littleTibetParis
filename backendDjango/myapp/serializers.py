@@ -1,7 +1,9 @@
 from rest_framework import serializers
+
 # from backendDjango.myapp.models import Contact
 from myapp.models import Restaurant, Boutique, Ngo
-from django.contrib.auth import get_user_model # new
+from django.contrib.auth import get_user_model
+
 
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,12 +21,16 @@ class NgoSerializer(serializers.ModelSerializer):
         model = Ngo
         fields ="__all__"
 
+
+class UserSerializer(serializers.ModelSerializer): 
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'username',)
+
+
+
+
 # class ContactSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Contact
 #         fields ="__all__"
-
-class UserSerializer(serializers.ModelSerializer): # new
-    class Meta:
-        model = get_user_model()
-        fields = ('id', 'username',)

@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import React, { Component } from 'react';
 
-	const CardNgo = () => {
-   
-	const [ngos, setNgos] = useState([]);    
+class CardNgo extends Component {
+    constructor() {
+        super();
+        this.state = {
+            ngos: [], 
+        };
+    }
 
-    useEffect(() => {
-		const fetchDatabase = async () => {
-        const data = await fetch("http://127.0.0.1:8000/ngos/?format=json");
-        const parseData = await data.json()
-        console.log(parseData);    
-		setNgos({ ngos: parseData })
-	}
-	fetchDatabase();
-    }, [])
+	 componentDidMount() {
+			axios.get(`http://127.0.0.1:8000/ngos/?format=json`).then((response) => {
+				const data = response.data
+				this.setState({ngos : data});
+				console.log('data')
+		}).catch((err) =>{
+			console.log(err);
+		})
+		}
 
-        return (
-            <>
-            {this.state.ngos.map(item => (
-
+	
+render(){
+	return (	
+		<>
+		
+			{this.state.ngos.map(item => (
+				
 				<div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
 					<div class="w-full md:w-1/3 bg-white grid place-items-center" key={item.id}>
 						<img src={item.image} alt="ONG" class="rounded-xl" />
@@ -46,8 +54,8 @@ import React, { useState, useEffect } from 'react';
 						<p class="text-lg font-black text-gray-800">{item.phone}</p>
 					</div>
 				</div>         
-            ))}
+			))}
         </>
-    );
-    }
+    )
+}}
 export default CardNgo;
