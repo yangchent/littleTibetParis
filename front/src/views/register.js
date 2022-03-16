@@ -107,8 +107,8 @@ const Register = () => {
               : "appearance-none rounded relative block w-full px-3 py-2 border border-red-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm "
           }/>
         </div>
-        <div className='flex justify-center m-2'>    
-            <Button onClick='submit' value='Signup' children="sign Up" />                   
+        <div className='flex flex-col justify-center m-2'>    
+            <Button onClick='submit' value='SignUp' children="S'incrire" classAdd="mt-2 tracking-widest text-xl" />                   
         </div>
       </form>
       </div>

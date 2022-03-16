@@ -14,7 +14,7 @@ const Faq=()=>{
                 <div className="border-b tab">
                     <div className="border-l-2 border-transparent relative">
                         <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck1" />
-                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck1">
+                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck1">
                             <span className="text-grey-darkest font-thin text-xl">
                                 Qu'est-ce que le Tibet ?
                             </span>
@@ -40,7 +40,7 @@ const Faq=()=>{
                 <div className="border-b tab">
                     <div className="border-l-2 border-transparent relative">
                         <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck2" />
-                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck2">
+                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck2">
                             <span className="text-grey-darkest font-thin text-xl">
                                 Pourquoi les tibétains sont-ils en France ?
                             </span>
@@ -63,7 +63,7 @@ const Faq=()=>{
                 <div className="border-b tab">
                     <div className="border-l-2 border-transparent relative">
                         <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3" />
-                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck3">
+                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck3">
                             <span className="text-grey-darkest font-thin text-xl">
                             Pourquoi ce projet ?
                             </span>
@@ -86,7 +86,7 @@ const Faq=()=>{
                 <div className="border-b tab">
                     <div className="border-l-2 border-transparent relative">
                         <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck2" />
-                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck2">
+                        <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck2">
                             <span className="text-grey-darkest font-thin text-xl">
                                 L'avenir de ce site ?
                             </span>

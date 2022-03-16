@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Contact() {
+    
     return (
     <div className="container mx-auto my-16">
         <h1 className="text-2xl font-semibold text-center text-mygreen font-poppins p-6">CONTACTEZ-NOUS</h1> 

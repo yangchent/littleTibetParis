@@ -54,7 +54,7 @@ const Login = () => {
     <div className='container mx-auto my-16'>
       <div className='w-full flex justify-center font-fredoka'>
         <div className="w-96 px-16 py-12 shadow-xl rounded-lg -space-y-2">
-        {loading === false && <h1 class="font-poppins text-mygreen font-semibold text-lg text-center">Login</h1>}
+        {loading === false && <h1 className="font-poppins text-mygreen font-semibold text-lg text-center">Login</h1>}
         {errors === true && <p className='text-sm text-red-500'>Cannot log in with provided credentials</p>}
         {loading === false && (
           <form onSubmit={onSubmit}  >
@@ -106,9 +106,9 @@ const Login = () => {
                 }
               />
             </div>
-            <div className="flex justify-center mt-2">
+            <div className="flex flex-col justify-center mt-2">
                 
-              <Button type='submit' value='Login' children="LOGIN" />
+              <Button type='submit' value='Login' children="LOGIN" classAdd="mt-2 tracking-widest"/>
             </div>
                        
           </form>

@@ -27,9 +27,9 @@ function Home() {
 
   return (
   <div className="container mx-auto ">
-    <h2 className='pt-16'>Hello {userEmail}!</h2>
     {loading === false && (
       <div className="h-screen flex items-center justify-center">
+        <h2 className='pt-16'>Hello y {userEmail}!</h2>
         <>
           <h1 className="text-8xl font-bold text-mygreen font-poppins text-center">TIBET  </h1>
           <h1 className="text-8xl font-bold text-myorange font-poppins text-center">PARIS  </h1> 

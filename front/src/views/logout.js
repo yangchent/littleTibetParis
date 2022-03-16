@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
+import Button from '../components/button';
 
 const Logout = () => {
 
@@ -31,15 +32,19 @@ const Logout = () => {
   };
 
   return (
-    <div className='container mx-auto mt-28'>
+  <div className='container mx-auto my-16'>
+    <div className='w-full flex justify-center font-fredoka'>
+      <div className="w-96 px-16 py-12 shadow-xl rounded-lg -space-y-2">
       {loading === false && (
         
-            <div className="bg-gray-200 ">
-                <h1>Are you sure you want to logout?</h1>
-                <input type='submit' value='Logout' onClick={handleLogout} />
+            <div className="flex flex-col justify-center ">
+              <h1>Vous voulez vous déconnecter ?</h1>
+               <Button type='submit' children='LOG-OUT' value='Logout' onClick={handleLogout} classAdd="mt-2 tracking-widest"/>
             </div>
         
       )}
+    </div>
+    </div>
     </div>
   );
 };
