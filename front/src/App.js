@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
+
 // Import views
 import Home from "./views/home";
 import About from "./views/about";
@@ -20,7 +21,8 @@ import Footer from './components/footer';
 
 
 function App() {
- 
+  
+
   return (
     <Router>
       <Navbar />
@@ -39,8 +41,9 @@ function App() {
             <Route path="*" element={<Error404 />} />
         </Routes>
       <Footer />
-    </Router>
-  );
-}
+      </Router>
+
+      );
+    }
 
 export default App;

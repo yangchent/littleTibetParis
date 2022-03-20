@@ -9,7 +9,7 @@ function Footer() {
       <div className="fixed inset-x-0 bottom-0">
         <div className="py-4 px-5 flex sm:flex-row font-poppins bg-white justify-center">
           <div>
-            <p >© 2021 littleTibetParis. All rights reserved.</p>
+            <p >© 2021 littleTibetParis.</p>
           </div>
           
             <div >

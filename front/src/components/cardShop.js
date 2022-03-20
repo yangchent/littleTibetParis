@@ -26,9 +26,11 @@ render(){
         {this.state.shops.map(item => (
 
 	    <div key={item.id} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
-            <div className="w-full md:w-1/3 bg-white grid place-items-center">
-				<img src={item.image} alt="shops" className="rounded-lg" />
-            </div>
+            <div className="w-3/4 sm:w-full bg-white">
+				<div className="flex justify-center">
+					<img src={item.image} alt="shops" className="rounded-lg" />
+				</div>
+			</div>
 			<div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 font-fredoka">
 				<div className="flex justify-between item-center">
 				{item.link ? (

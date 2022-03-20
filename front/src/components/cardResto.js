@@ -13,7 +13,6 @@ class CardResto extends Component {
         };
     }
 	
-	
 	componentDidMount() {
 		axios.get(`http://127.0.0.1:8000/restaurants/?format=json`).then((response) => {
 			this.setState({loading : true })

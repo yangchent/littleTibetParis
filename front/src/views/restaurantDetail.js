@@ -24,20 +24,22 @@ const getUsers = async (id) => {
 	  },[]);
 		
 return (
-	<div className="container mx-auto mt-24">     
+	<div className="relative container mx-auto sm:mt-24">     
 
 		<div key={restaurant.id} className="relative">
 			<h1 className="py-6 text-center text-gray-600 text-3xl font-poppins font-semibold">{restaurant.name}</h1>
 			
+
+	
 			<div className="flex flex-col">
 				{/* 1st flex */}
 				<div className="relative place-items-center w-full md:w-1/2 md:flex">
-					<img src={restaurant.image} alt="resto" className="rounded-lg w-2/3 p-2" />
-					<img src={restaurant.image} alt="resto" className="rounded-lg w-2/3 p-2" />
-					<img src={restaurant.image} alt="resto" className="rounded-lg w-2/3 p-2" />
+					<img src={restaurant.image} alt="resto" className="rounded-lg sm:w-2/3 p-2" />
+					<img src={restaurant.image} alt="resto" className="rounded-lg sm:w-2/3 p-2" />
+					<img src={restaurant.image} alt="resto" className="rounded-lg sm:w-2/3 p-2" />
 				</div>
 				{/* 2nd flex */}
-				<div className="w-full flex justify-between whitespace-nowrap space-y-2 p-3 ">
+				<div className="w-full sm:flex sm:justify-between whitespace-nowrap space-y-2 p-3 mb-12">
 					{/* sub flex 1 */}
 					<div className="px-6 font-poppins p-6">
 						<h2 className="text-center text-xl text-myorange divide-y pb-2">Address </h2>

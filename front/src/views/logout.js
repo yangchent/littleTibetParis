@@ -32,7 +32,7 @@ const Logout = () => {
   };
 
   return (
-  <div className='container mx-auto my-16'>
+  <div className='relative container mx-auto my-16'>
     <div className='w-full flex justify-center font-fredoka'>
       <div className="w-96 px-16 py-12 shadow-xl rounded-lg -space-y-2">
       {loading === false && (

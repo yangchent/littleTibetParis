@@ -4,7 +4,7 @@ import "../css/faq_page.css"
 const Faq=()=>{
 
     return (
-        <main className="w-3/5 p-8 mx-auto my-12">
+        <main className="relative w-3/5 p-8 mx-auto my-12">
         <h1 className="font-semibold text-center font-poppins text-2xl font-heading text-mygreen pb-2 m-3">Les questions les plus fréquentes</h1>
         <h3 className="m-12 text-center font-fredoka text-gray-400 text-base">Vous avez une question ? Voici les réponses aux questions les plus fréquemment posées.
             N'hésitez pas à nous contacter par mail pour toute autre question.</h3>

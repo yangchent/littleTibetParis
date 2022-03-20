@@ -3,7 +3,7 @@ import React from 'react';
 function Contact() {
     
     return (
-    <div className="container mx-auto my-16">
+    <div className="relative container mx-auto my-16">
         <h1 className="text-2xl font-semibold text-center text-mygreen font-poppins p-6">CONTACTEZ-NOUS</h1> 
         <h3 className="m-8 text-center font-fredoka text-gray-400 text-base">Vous avez une question ? Voici les réponses aux questions les plus fréquemment posées.
           <br />  N'hésitez pas à nous contacter par mail pour toute autre question.</h3>
