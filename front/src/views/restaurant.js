@@ -19,7 +19,7 @@ function Restaurant() {
       { isAuth === true ?
         (<div className="relative container mx-auto md:my-16">
             <h1 className="text-2xl font-semibold text-mygreen font-poppins text-center p-8">RESTAURANT</h1> 
-			<CardResto />
+			      <CardResto />
                       
 	    </div>)
         :(<></>)}

@@ -22,15 +22,14 @@ class CardNgo extends Component {
 	
 render(){
 	return (	
-		<>
-		
+		<>		
 			{this.state.ngos.map(item => (
 				
-				<div key={item.id} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
-					<div className="w-full md:w-1/3 bg-white grid place-items-center" >
+				<div key={item.id} className="relative flex flex-col md:flex-row md:space-x-4 md:space-y-2 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto bg-white m-2">
+					<div className="w-1/3 bg-white grid place-items-center" >
 						<img src={item.image} alt="ONG" className="rounded-xl" />
 					</div>
-					<div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 font-fredoka">
+					<div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-2 font-fredoka">
 						<div className="flex justify-between item-center">
 							<a href={item.link} target="_blank"  rel="noreferrer" className="text-blue-600 text-sm md:block hover:text-blue-400">
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className="w-4 h-4 inline-block mr-1" viewBox="0 0 52 52" enable-background="new 0 0 52 52">

@@ -32,7 +32,7 @@ class CardResto extends Component {
             <>
 			{this.state.loading && <Spinner />}
         	{this.state.restaurants.map( item => (
-	    		<div key={item.id} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
+	    		<div key={item.id} className="relative flex flex-col md:flex-row md:space-x-4 md:space-y-2 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto bg-white m-2">
 					<div className="w-26 h-26 md:w-1/3 bg-white grid place-items-center">
 						<img src={item.image} alt="resto" className="rounded-lg" />
 					</div>
