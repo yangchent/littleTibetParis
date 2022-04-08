@@ -42,19 +42,21 @@ INSTALLED_APPS = [
     # Local
     'myapp',
 
-    # 3rd party
+    # Authentification
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',# cors
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
     'dj_rest_auth',
     'dj_rest_auth.registration', 
-
+    # for creating social media authentication view
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 SITE_ID = 1 
 
 MIDDLEWARE = [
