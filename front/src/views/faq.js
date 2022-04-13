@@ -20,7 +20,7 @@ const Faq=()=>{
                             </span>
                             <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                                 {/* icon by feathericons.com */}
-                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <polyline points="6 9 12 15 18 9">
                                     </polyline>
                                 </svg>
@@ -46,7 +46,7 @@ const Faq=()=>{
                             </span>
                             <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                                 {/* icon by feathericons.com */}
-                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <polyline points="6 9 12 15 18 9">
                                     </polyline>
                                 </svg>
@@ -69,7 +69,7 @@ const Faq=()=>{
                             </span>
                             <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                                 {/* <!-- icon by feathericons.com --> */}
-                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <polyline points="6 9 12 15 18 9">
                                     </polyline>
                                 </svg>
@@ -92,7 +92,7 @@ const Faq=()=>{
                             </span>
                             <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                                 {/* icon by feathericons.com */}
-                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <polyline points="6 9 12 15 18 9">
                                     </polyline>
                                 </svg>

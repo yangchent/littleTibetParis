@@ -25,13 +25,12 @@ render(){
     <>
         {this.state.shops.map(item => (
 
-	    <div key={item.id} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white m-2">
-            <div className="w-3/4 sm:w-full bg-white">
-				<div className="flex justify-center">
+	    <div key={item.id} className="relative flex flex-col md:flex-row md:space-x-4 md:space-y-2 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl 	mx-auto bg-white m-2">
+            <div className="w-26 h-26 md:w-1/3 bg-white grid place-items-center">
 					<img src={item.image} alt="shops" className="rounded-lg" />
-				</div>
 			</div>
-			<div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 font-fredoka">
+
+			<div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3 font-poppins">
 				<div className="flex justify-between item-center">
 				{item.link ? (
 						<a href={item.link} target="_blank" rel="noreferrer" className="text-blue-600 text-sm md:block hover:text-blue-400">
@@ -52,9 +51,9 @@ render(){
 						Détail
 					</div>
 				</div>
-				<h3 className="font-black text-gray-800 md:text-3xl text-xl">{item.name}</h3>
+				<h3 className="font-semibold text-gray-600 text-xl">{item.name}</h3>
 				<p className="md:text-lg text-gray-500 text-base">{item.address}</p>
-				<p className="text-xl font-black text-gray-800">{item.city} {item.Zip_code} </p>
+				<p className="text-lg text-gray-600">{item.city} {item.Zip_code} </p>
 
 			</div>
 	    </div>         

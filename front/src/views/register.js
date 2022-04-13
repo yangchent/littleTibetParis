@@ -9,12 +9,13 @@ const Register = () => {
   const [password2, setPassword2] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
+  const[success, setSuccess] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
       window.location.replace('http://localhost:3000/login/');
     } else {
-      setLoading(false);
+      setLoading(true);
     }
   }, []);
 
@@ -28,19 +29,26 @@ const Register = () => {
       password2: password2
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/dj-rest-auth/registration/', {
+    fetch('http://localhost:8000/api/v1/dj-rest-auth/registration/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify(user)
+      
     })
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
+        console.log(data);
+        setSuccess(true);
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           window.location.replace('http://localhost:3000/');
+          
+          console.log(user)
+          console.log('token')
         } else {
           setUsername('');
           setEmail('');
@@ -52,11 +60,16 @@ const Register = () => {
       });
   };
  
-  return (
+  return (<>
+    {success ? (
+      <div> Registeration sucess <a href="/login">login</a>
+      </div>
+    ) : ( 
     <div className='relative container mx-auto mt-4 sm:mt-24'>
+      
     <div className='w-full flex justify-center font-fredoka'>
       <div className="w-96 px-16 py-12 shadow-xl rounded-lg -space-y-2">
-        {loading === false && <h1 class="font-poppins text-mygreen font-semibold text-lg text-center">S'inscrire</h1>}
+        {loading === false && <h1 className ="font-poppins text-mygreen font-semibold text-lg text-center">S'inscrire</h1>}
         {errors === true && <h2>Impossible de s'inscrire avec les informations d'identification fournies</h2>}
         <form onSubmit={onSubmit} >
 
@@ -114,12 +127,14 @@ const Register = () => {
           {errors.password2 === true && <h2>password doesnt match</h2>}
         </div>
         <div className='flex flex-col justify-center m-2'>    
-            <Button onClick='submit' value='SignUp' children="S'incrire" classAdd="mt-2 tracking-widest text-xl" />                   
+            <Button type='submit' value='SignUp' children="S'incrire" classAdd="mt-2 tracking-widest text-xl" />                   
         </div>
       </form>
       </div>
       </div>
     </div>
+      )}
+      </>
   );
 };
 

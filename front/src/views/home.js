@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 function Home() {  
 
-  const [userEmail, setUserEmail] = useState(false);
-  const [isLoggedIn, setIsloggedIn] = useState(false);
+  const [username, setUsername] = useState(false);
   const [loading, setLoading] = useState(true);  
 
   useEffect(() => {
@@ -21,21 +20,20 @@ function Home() {
         })
           .then(res => res.json())
           .then(data => {
-            setUserEmail(data.email)
-            setIsloggedIn(true);
+            setUsername(data.username)
             setLoading(false);
-            console.log(data.email)
+            console.log(data.username)
           });
       }
   }, []);
 
   return (
-  <div className="relative container mx-auto ">
+  <div className="relative container font-poppins mx-auto ">
+    <h2 className='flex justify-center text-myorange '>Hello! {username}</h2>
     {loading === false && (
-      <div className="h-screen flex items-center justify-center">
-        
-          <h1 className="text-5xl sm:text-8xl font-bold text-mygreen font-poppins text-center">TIBET  </h1>
-          <h1 className="text-5xl sm:text-8xl font-bold text-myorange font-poppins text-center">PARIS  </h1> 
+      <div className="mt-36 flex items-center justify-center">
+          <h1 className="text-5xl sm:text-8xl font-bold text-mygreen">TIBET  </h1>
+          <h1 className="text-5xl sm:text-8xl font-bold text-myorange">PARIS  </h1> 
       
       </div>
     )}

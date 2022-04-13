@@ -3,9 +3,9 @@ import React from "react";
 
 function About() {
         return (
-            <div className="relative container mx-auto my-16 max-h-screen">
+            <div className="relative container mx-auto my-2 max-h-screen">
                 <div className="shadow-lg p-2 md:p-8">
-                    <h1 className="md:text-3xl font-bold font-poppins text-center p-1 md:p-12">Quelques mots pour décrire l'objectif de la création de cette page :</h1> 
+                    <h1 className="md:text-3xl font-poppins text-center p-1 md:p-12">Quelques mots pour décrire l'objectif de la création de cette page :</h1> 
                    <div className="w-full flex md:justify-evenly md:my-8 flex-wrap">
                        <div className="p-1 md:p-6">
                             <h1 className="text-2xl font-semibold text-myorange p-2 tracking-widest md:pl-10 ">Réunir</h1>

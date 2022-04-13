@@ -42,16 +42,16 @@ INSTALLED_APPS = [
     # Local
     'myapp',
 
-    # Authentification
+   # 3rd party
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',# cors
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'dj_rest_auth',
     'dj_rest_auth.registration', 
     # for creating social media authentication view
-    # 'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
 ]
