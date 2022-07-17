@@ -1,5 +1,10 @@
-from django.contrib.auth import get_user_model # new
+from allauth.account.utils import send_email_confirmation
+from dj_rest_auth.registration.views import APIView, method_decorator
+from django.contrib.auth import get_user_model
+from django.http import request, response # new
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import csrf_exempt
 from myapp.models import Restaurant, Boutique, Ngo
 from .permissions import IsAuthorOrReadOnly # new
 from .serializers import (
@@ -40,7 +45,20 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView): # new
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
 
-    
+
+
+
+
+# class VerifyEmailView(APIView):
+#    permission_classes = [IsAuthenticated]
+
+#     def post(self):
+#         if request.user.email_verified:
+#             return response {}
+
+
+
+
 # from myapp.forms import ContactFormView
 # from django.views.generic.edit import FormView
 

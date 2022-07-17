@@ -56,8 +56,18 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.google',
 ]
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 SITE_ID = 1 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+
+LOGIN_URL = 'http://localhost:8000/accounts_api/api/v1/dj-rest-auth/login'
 
 MIDDLEWARE = [
 'django.middleware.security.SecurityMiddleware',
