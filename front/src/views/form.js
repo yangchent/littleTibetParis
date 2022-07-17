@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState} from 'react';
-import axios from 'axios'
 import "../css/form.css"
 import Button from '../components/button';
 import {faCheck, faTimes, faInfoCircle} from "@fortawesome/free-solid-svg-icons";
@@ -63,6 +62,7 @@ const Form = () => {
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
             setSuccess(true);
+            // window.location.replace('http://localhost:3000/login');
         } 
       }, []);
 
@@ -96,7 +96,8 @@ const Form = () => {
               if (data.key) {
                 localStorage.clear();
                 localStorage.setItem('token', data.key);
-                window.location.replace('http://localhost:3000/');
+             
+                window.location.replace('http://localhost:3000/login');
               } else {
                 setUsername('');
                 setEmail('');
@@ -254,7 +255,7 @@ const Form = () => {
                             </p>
                         </div>
                         <div className='flex flex-col justify-center m-2'>    
-                            <Button disabled={!validName || !validEmail || !validPwd || !validMatch ? true : false } onClick={handleSubmit} value='SignUp' children="S'incrire" classAdd="mt-2 tracking-widest text-xl" />                   
+                            <Button disabled={!validName || !validEmail || !validPwd || !validMatch ? true : false } type='submit' value='SignUp' children="S'incrire" classAdd="mt-2 tracking-widest text-xl" />                   
                         </div>
                     </form>
                 </div>

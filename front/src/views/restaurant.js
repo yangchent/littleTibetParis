@@ -2,16 +2,13 @@ import React,  { useState, useEffect } from 'react';
 import CardResto from "../components/cardResto";
 
 function Restaurant() {
-	const [isAuth, setIsAuth] = useState(false);
-    const [loading, setLoading] = useState(true);   
+	const [isAuth, setIsAuth] = useState(false);  
 
 
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
 
-          setIsAuth(true);
-          setLoading(false);
-          
+          setIsAuth(true);         
         }       
       }, []);
     
