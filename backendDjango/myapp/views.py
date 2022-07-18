@@ -1,17 +1,13 @@
-from allauth.account.utils import send_email_confirmation
-from dj_rest_auth.registration.views import APIView, method_decorator
 from django.contrib.auth import get_user_model
-from django.http import request, response # new
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.views import csrf_exempt
 from myapp.models import Restaurant, Boutique, Ngo
 from .permissions import IsAuthorOrReadOnly # new
 from .serializers import (
 RestaurantSerializer ,
 BoutiqueSerializer, 
 NgoSerializer,
-UserSerializer
+UserSerializer,
+# ContactSerializer,
 )
 
 class RestaurantAPIView(generics.ListAPIView):
@@ -46,28 +42,30 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView): # new
     serializer_class = UserSerializer
 
 
+# from django.core.mail import send_mail
+# from rest_framework import serializers, status, views
+# from rest_framework.response import Response
 
 
-
-# class VerifyEmailView(APIView):
-#    permission_classes = [IsAuthenticated]
-
-#     def post(self):
-#         if request.user.email_verified:
-#             return response {}
+# class ContactSerializer(serializers.Serializer):
+#     name = serializers.CharField()
+#     email = serializers.EmailField()
+#     # add other fields
 
 
-
-
-# from myapp.forms import ContactFormView
-# from django.views.generic.edit import FormView
-
-# class ContactFormView(FormView):
-#     queryset = Contact.objects.all()
-#     serializer_class = ContactSerializer
-
-#     def form_valid(self, form):
-#         # This method is called when valid form data has been POSTed.
-#         # It should return an HttpResponse.
-#         form.send_email()
-#         return super().form_valid(form)
+# class ContactView(views.APIView):
+#     def post(self, request, *args, **kwargs):
+#         serializer = ContactSerializer(request.data)
+#         if serializer.is_valid():
+#             data = serializer.validated_data
+#             email = data.get('email')
+#             firstname = data.get('firstname')
+#             send_mail(
+#                 'Sent email from {}'.format(firstname),
+#                 'Here is the message. {}'.format(data.get('message')),
+#                 email,
+#                 ['to@example.com'],
+#                 fail_silently=False,
+#             )
+#             return Response({"success": "Sent"})
+#         return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)

@@ -1,5 +1,5 @@
 # Django api 
-https://www.youtube.com/watch?v=7WmSJGRsHfo 
+
 ## To activate the environment, run:
 
 		source .venv/Scripts/activate

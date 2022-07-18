@@ -36,14 +36,11 @@ class Ngo(models.Model):
     type = models.CharField(max_length=200, blank=True)
     image= models.FileField(upload_to='media/images', blank=True)
 
-    def __str__(self):
-        return self.name
-
 # class Contact(models.Model):
 #     firstname = models.CharField(max_length=50 )
 #     lastname = models.CharField(max_length=50, )
 #     email = models.CharField(max_length=80,  blank=False )
 #     message = models.TextField(max_length=500,  blank=False )
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name

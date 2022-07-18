@@ -27,7 +27,28 @@ class UserSerializer(serializers.ModelSerializer):
         model = get_user_model()
         fields = "__all__"
 
-# class ContactSerializer(serializers.ModelSerializer):
+
+
+# from django.core.mail import send_mail
+
+
+# class ContactCreateSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Contact
-#         fields ="__all__"
+#         fields = [
+#             'firstname',
+#             'lastname',
+#             'email',
+#             'message',
+#         ]
+
+#         def create(self, validate_data):
+#             instance = super(ContactCreateSerializer, self).create(validate_data)
+#             send_mail(
+#                 'Instance {} has been created'.format(instance.pk),
+#                 'Here is the message. DATA: {}'.format(validate_data),
+#                 'from@example.com',
+#                 ['to@example.com'],
+#                 fail_silently=False,
+#             )
+#             return instance
